@@ -2,47 +2,77 @@
 
 This project leverages the DeBERTa (Decoding-enhanced BERT with disentangled attention) model for natural language processing (NLP) tasks. The workspace is structured to facilitate experimentation, training, and evaluation of the model.
 
+**Model Performance:**
+
+* Achieved **90% accuracy** on the classification task.
+
 ## Workspace Structure
 
-- **deberta.ipynb**: A Jupyter Notebook for running experiments and exploring the DeBERTa model.
-- **FR_NFR_Dataset.xlsx**: Dataset file in Excel format, used for training and evaluation.
-- **test.py**: A Python script for testing specific functionalities of the project.
-- **deberta_model/**: Directory containing the DeBERTa model files and configurations.
-  - `added_tokens.json`, `config.json`, `model.safetensors`, etc.: Files related to the model and tokenizer.
-  - **checkpoint-2756/**: Directory containing checkpoint files for resuming training or inference.
+```
+├── deberta.ipynb        # Jupyter Notebook for experiments and exploration
+├── FR_NFR_Dataset.xlsx  # Dataset file in Excel format for training and evaluation
+├── test.py              # Python script to test specific functionalities
+└── deberta_model/       # Directory containing model files and configurations
+    ├── added_tokens.json
+    ├── config.json
+    ├── model.safetensors
+    └── checkpoint-2756/ # Checkpoint files for resuming training or inference
+```
 
 ## Getting Started
 
 ### Prerequisites
 
-Ensure you have Python installed on your system. It is recommended to use a virtual environment to manage dependencies.
+* Python 3.7 or higher
+* (Optional) Virtual environment tool such as `venv` or `conda`
 
 ### Installation
 
-1. Clone the repository or download the project files.
-2. Navigate to the project directory.
-3. Install the required dependencies using the following command:
+1. Clone the repository or download the project files:
 
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   git clone https://github.com/NeuroStacker/Deberta_FR_NFR
+   ```
+2. Navigate to the project directory:
 
-### Usage
+   ```bash
+   cd 
+   ```
+3. Install the required dependencies:
 
-1. Open `deberta.ipynb` in Jupyter Notebook to explore and run the model experiments.
-2. Use `test.py` to test specific functionalities.
-3. Refer to the `deberta_model/` directory for model configurations and checkpoints.
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+1. Launch Jupyter Notebook and open `deberta.ipynb` to explore and run experiments:
+
+   ```bash
+   jupyter notebook deberta.ipynb
+   ```
+2. Execute cells to train, evaluate, and analyze the DeBERTa model.
+3. Use `test.py` to run unit tests or specific functionality checks:
+
+   ```bash
+   python test.py
+   ```
+4. Adjust model configurations in `deberta_model/config.json` or update tokenizer settings as needed.
 
 ## Notes
 
-- The `FR_NFR_Dataset.xlsx` file contains the dataset used for training and evaluation.
-- Checkpoints in `deberta_model/checkpoint-2756/` can be used to resume training or for inference.
-- Modify the configurations in `config.json` or other related files as needed for your specific use case.
+* The `FR_NFR_Dataset.xlsx` file contains labeled data for functional requirement (FR) vs. non-functional requirement (NFR) classification.
+* Use the checkpoint files in `deberta_model/checkpoint-2756/` to resume training or perform inference without retraining from scratch.
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions or improvements, feel free to submit a pull request.
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes and push to your branch.
+4. Open a pull request with a clear description of your changes.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
